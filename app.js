@@ -6,11 +6,11 @@
 /*eslint no-console: "off"*/
 /*eslint no-unused-vars: "off"*/
 
-var express = require("express");
+const express = require("express");
 const app = express();
-var mongoose = require("mongoose");
-var parser = require("body-parser");
-var path = require("path");
+const mongoose = require("mongoose");
+const parser = require("body-parser");
+const path = require("path");
 
 mongoose.connect(
 	"mongodb://dbUser:dbPassword@ds155428.mlab.com:55428/getir-bitaksi-hackathon"
@@ -29,6 +29,6 @@ db.once("open", function() {
 
 const record = require("./controllers/searchRecords");
 
-app.listen(3000);
+app.listen(5000);
 app.use(parser.json());
 app.use("/", record);
