@@ -4,24 +4,15 @@
 /*eslint no-console: "off"*/
 /*eslint no-unused-vars: "off"*/
 
-const router = require("express").Router();
 
-// module.exports = records => {
-// 	router.post("/searchRecords", (req, res) => {
-// 		records.findByKey(req.body.key, (err, data) => {
-// 			if (err) {
-// 				res.sendStatus(404);
-// 			} else {
-// 				res.send(data);
-// 			}
-// 		});
-// 	});
-// 	return router;
-// };
+const router = require("express").Router();
+const findRecords = require("../models/searchRecords");
 
 router.post("/searchRecords", (req, res) => {
 	
-	// return router;
+	findRecords(req.body);
+	res.end("hirrime");
 });
 
 module.exports = router;
+

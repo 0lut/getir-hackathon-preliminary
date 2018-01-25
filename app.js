@@ -1,3 +1,4 @@
+
 // import { connect } from "../../.cache/typescript/2.6/node_modules/@types/mongodb";
 
 /*eslint no-undef: "error"*/
@@ -11,21 +12,23 @@ var mongoose = require("mongoose");
 var parser = require("body-parser");
 var path = require("path");
 
-mongoose
-	.connect(
-		"mongodb://dbUser:dbPassword@ds155428.mlab.com:55428/getir-bitaksi-hackathon"
-	)
-	.then(console.log("Succesfully connected!"))
-	.catch(err => {
-		console.error(err);
-		process.exit(1);
-	});
+mongoose.connect(
+	"mongodb://dbUser:dbPassword@ds155428.mlab.com:55428/getir-bitaksi-hackathon"
+);
+mongoose.Promise = global.Promise;
+
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", function() {
+
+	console.log("icerdeyiz");
+});
+
+
+
 
 const record = require("./controllers/searchRecords");
 
 app.listen(3000);
-
-app.use(parser.json);
-
+app.use(parser.json());
 app.use("/", record);
-
