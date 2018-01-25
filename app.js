@@ -29,6 +29,6 @@ db.once("open", function() {
 
 const record = require("./controllers/searchRecords");
 
-app.listen(5000);
+app.listen(process.env.PORT || 5000);
 app.use(parser.json());
 app.use("/", record);
