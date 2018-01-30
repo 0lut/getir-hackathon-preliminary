@@ -17,21 +17,24 @@ module.exports = () => {
 	);
 
 	const records = mongoose.model("Records", RecordSchema);
-	// I will do it I PROMISE, JK!
 	const find = (query, callback) => {
-		return records
-			.find({
-				createdAt: {
-					$gte: new Date(query.startDate),
-					$lte: new Date(query.endDate)
-				}
-			})
-			.count()
-			.then(res => {
-				return res;
-			})
-			.catch(err => console.error(err));
-		
+		return (
+			records
+				// .aggregate({ $match: { $sum: "counts" } })
+
+				.find({
+					createdAt: {
+						$gte: new Date(query.startDate).toISOString(),
+						$lte: new Date(query.endDate).toISOString()
+					}
+				})
+
+				.then(res => {
+					return res;
+				})
+
+				.catch(err => console.error(err))
+		);
 	};
 	return {
 		find: find
