@@ -1,27 +1,29 @@
 {
-  "name": "getir-hackathon-preliminary",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "dependencies": {
-    "axios": "^0.17.1",
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "mongoose": "^5.0.1",
-    "path": "^0.12.7"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/norveclibalikci/getir-hackthon-preliminary.git"
-  },
-  "author": "sahinolut",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/norveclibalikci/getir-hackthon-preliminary/issues"
-  },
-  "homepage": "https://github.com/norveclibalikci/getir-hackthon-preliminary#readme"
+	"name": "getir-hackathon-preliminary",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"dependencies": {
+		"axios": "^0.17.1",
+		"body-parser": "^1.18.2",
+		"express": "^4.16.2",
+		"mongoose": "^5.0.1"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url":
+			"git+https://github.com/norveclibalikci/getir-hackthon-preliminary.git"
+	},
+	"author": "sahinolut",
+	"license": "MIT",
+	"bugs": {
+		"url":
+			"https://github.com/norveclibalikci/getir-hackthon-preliminary/issues"
+	},
+	"homepage":
+		"https://github.com/norveclibalikci/getir-hackthon-preliminary#readme"
 }

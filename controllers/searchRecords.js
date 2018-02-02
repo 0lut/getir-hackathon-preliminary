@@ -1,8 +1,3 @@
-/*eslint no-undef: "error"*/
-/*eslint-env node*/
-/*eslint no-console: "off"*/
-/*eslint no-unused-vars: "off"*/
-
 const router = require("express").Router();
 const RecordsModel = require("../models/searchRecords")();
 
@@ -15,24 +10,12 @@ router.post("/searchRecords", async (req, res) => {
 			.end();
 	else {
 		try {
-			const data = await RecordsModel.find(body);
-			res.json( data );
-			// console.log(data);
+			const payload = { msg: "Success", code: "0" };
+			payload.records = await RecordsModel.find(body);
+			res.json(payload).end();
 		} catch (err) {
-			res.sendStatus(500);
-			console.error(err);
+			res.sendStatus(500).end();
 		}
-		let cnt = 0;
-		// for (const i of data) cnt += 1;
-
-		// data
-		// 	.then(fulfill => {
-		// 		res.send({ fulfill }).end();
-		// 	})
-		// 	.catch(err => {
-		// 		res.send({ statusCode: 400, message: "Something went wrong lol" }).end();
-		// 		console.error(err);
-		// 	});
 	}
 });
 
